@@ -37,7 +37,7 @@
 			riscv,isa = "rv32imc_zicsr";
 			reg = <0>;
 			cpu-power-states = <&light_sleep &deep_sleep>;
-			clock-source = <ESP32_CPU_CLK_SRC_PLL>;
+			//clock-source = <ESP32_CPU_CLK_SRC_PLL>;
 			clock-frequency = <DT_FREQ_M(160)>;
 			xtal-freq = <DT_FREQ_M(40)>;
 		};
