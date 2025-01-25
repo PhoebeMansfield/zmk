@@ -104,7 +104,7 @@
 		systimer0: systimer@60023000 {
 			compatible = "espressif,esp32-systimer";
 			reg = <0x60023000 0x80>;
-			interrupts = <SYSTIMER_TARGET0_EDGE_INTR_SOURCE IRQ_DEFAULT_PRIORITY 0>;
+			//interrupts = <SYSTIMER_TARGET0_EDGE_INTR_SOURCE IRQ_DEFAULT_PRIORITY 0>;
 			interrupt-parent = <&intc>;
 			status = "okay";
 		};
