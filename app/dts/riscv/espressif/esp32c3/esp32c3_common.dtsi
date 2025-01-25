@@ -5,12 +5,12 @@
  */
 #include <mem.h>
 #include <freq.h>
-#include <zephyr/dt-bindings/adc/adc.h>
-#include <zephyr/dt-bindings/gpio/gpio.h>
-#include <zephyr/dt-bindings/i2c/i2c.h>
-#include <zephyr/dt-bindings/interrupt-controller/esp-esp32c3-intmux.h>
-#include <zephyr/dt-bindings/clock/esp32c3_clock.h>
-#include <dt-bindings/pinctrl/esp32-pinctrl.h>
+#include <zmk/dt-bindings/adc/adc.h>
+#include <zmk/dt-bindings/gpio/gpio.h>
+#include <zmk/dt-bindings/i2c/i2c.h>
+#include <zmk/dt-bindings/interrupt-controller/esp-esp32c3-intmux.h>
+#include <zmk/dt-bindings/clock/esp32c3_clock.h>
+#include <zmk/dt-bindings/pinctrl/esp32-pinctrl.h>
 
 / {
 	#address-cells = <1>;
