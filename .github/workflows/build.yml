@@ -54,6 +54,8 @@ jobs:
         run: west init -l app
       - name: Update modules (west update)
         run: west update
+      - name: Obtain Espressif binary blobs
+        run: west blobs fetch hal_espressif
       - name: Export Zephyr CMake package (west zephyr-export)
         run: west zephyr-export
       - name: Use Node.js
@@ -62,8 +64,6 @@ jobs:
           node-version: "14.x"
       - name: Install @actions/artifact
         run: npm install @actions/artifact
-      - name: Obtain Espressif binary blobs
-        run: west blobs fetch hal_espressif
       - name: Build
         uses: actions/github-script@v7
         id: boards-list
@@ -81,7 +81,7 @@ jobs:
               try {
                 console.log(`::group::${{ matrix.board}} ${shieldArgs.shield} Build`)
 
-                const output = execSync(`west build -s app -p -b ${{ matrix.board }} ${shieldArgs.snippet ? '-S ' + shieldArgs.snippet : ''} -- ${shieldArgs.shield ? '-DSHIELD="' + shieldArgs.shield + '"' : ''} ${shieldArgs['cmake-args'] || ''}`);
+                const output = execSync(`west build -s app -p -b ${{ matrix.board }} --sysbuild ${shieldArgs.snippet ? '-S ' + shieldArgs.snippet : ''} -- ${shieldArgs.shield ? '-DSHIELD="' + shieldArgs.shield + '"' : ''} ${shieldArgs['cmake-args'] || ''}`);
 
                 console.log(output.toString());
               } catch (e) {
